@@ -27,7 +27,7 @@ describe('webdriver.io page', function () {
         it('should filter search results', function () {
             browser.url("/api.html");
             browser.setValue('[name="search"]', "debug");
-            browser.saveScreenshot("screen.png")
+            // browser.saveScreenshot("screen.png")
         })
     })
 });
