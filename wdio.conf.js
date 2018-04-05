@@ -120,11 +120,14 @@ let config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/reporters/dot.html
-    reporters: ['dot', 'junit'],
+    reporters: ['dot', 'junit', 'allure'],
 
     reporterOptions: {
         junit: {
             outputDir: './reports/'
+        },
+        allure: {
+            outputDir: 'allure-results'
         }
     },
 
