@@ -1,22 +1,7 @@
 var caps = {};
-// caps['browserName'] = 'firefox';
-caps['browserName'] = 'safari';
-caps['platform'] = 'macOS 10.13';
-caps['version'] = '11.0';
-caps['screenResolution'] = '1024x768';
+caps['browserName'] = 'firefox';
 
 let config = {
-    //
-    // =================
-    // Service Providers
-    // =================
-    // WebdriverIO supports Sauce Labs, Browserstack, and Testing Bot (other cloud providers
-    // should work too though). These services define specific user and key (or access key)
-    // values you need to put in here in order to connect to these services.
-    //
-    user: process.env.SAUCE_USERNAME,
-    key: process.env.SAUCE_ACCESS_KEY,
-
 
     //
     // ==================
@@ -264,7 +249,21 @@ let config = {
 let argv = process.argv.slice(2);
 console.log(argv);
 if (argv.indexOf("--USE_SAUCE") != -1) {
+//
+    // =================
+    // Service Providers
+    // =================
+    // WebdriverIO supports Sauce Labs, Browserstack, and Testing Bot (other cloud providers
+    // should work too though). These services define specific user and key (or access key)
+    // values you need to put in here in order to connect to these services.
+    //
+    config.user = process.env.SAUCE_USERNAME;
+    config.key = process.env.SAUCE_ACCESS_KEY;
 
+    caps['browserName'] = 'safari';
+    caps['platform'] = 'macOS 10.13';
+    caps['version'] = '11.0';
+    caps['screenResolution'] = '1024x768';
 }
 
 exports.config = config;
